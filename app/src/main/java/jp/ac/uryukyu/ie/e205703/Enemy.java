@@ -16,6 +16,19 @@ public class Enemy {
     public int attack;
     public boolean dead;
 
+    public String getName(){
+        return this.name;
+    }
+    public int getHitPoint(){
+        return this.hitPoint;
+    }
+    public int getAttack(){
+        return this.attack;
+    }
+    public boolean getDead(){
+        return this.dead;
+    }
+
     /**
      * コンストラクタ。名前、最大HP、攻撃力を指定する。
      * @param name モンスター名
@@ -23,7 +36,6 @@ public class Enemy {
      * @param attack モンスターの攻撃力
      */
     public Enemy (String name, int maximumHP, int attack) {
-        if (this.dead != true);
         this.name = name;
         hitPoint = maximumHP;
         this.attack = attack;
@@ -37,14 +49,16 @@ public class Enemy {
      * @param hero 攻撃対象
      */
     public void attack(Hero hero){
+        if (this.hitPoint>0){
         int damage = (int)(Math.random() * attack);
-        System.out.printf("%sの攻撃！%sに%dのダメージを与えた！！\n", name, hero.name, damage);
+        System.out.printf("%sの攻撃！%sに%dのダメージを与えた！！\n", name, hero.getName(), damage);
         hero.wounded(damage);
+        }
     }
 
     /**
      * 自身へ攻撃されたときのダメージ処理をするメソッド。
-     * 指定されたダメージを hitPoint から引き、死亡判定を行う。
+     * 指定されたダメージを hitPoint から引き、死亡判定を行う。/
      * @param damage 受けたダメージ
      */
     public void wounded(int damage){
