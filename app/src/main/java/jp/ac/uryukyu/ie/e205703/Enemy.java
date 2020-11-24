@@ -11,10 +11,10 @@ package jp.ac.uryukyu.ie.e205703;
  * Created by tnal on 2016/11/13.
  */
 public class Enemy {
-    public String name;
-    public int hitPoint;
-    public int attack;
-    public boolean dead;
+    private String name;
+    private int hitPoint;
+    private int attack;
+    private boolean dead;
 
     public String getName(){
         return this.name;
