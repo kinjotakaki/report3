@@ -1,5 +1,7 @@
 package jp.ac.uryukyu.ie.e205703;
 
+
+
 /**
  * 敵クラス。
  *  String name; //敵の名前
@@ -21,6 +23,7 @@ public class Enemy {
      * @param attack モンスターの攻撃力
      */
     public Enemy (String name, int maximumHP, int attack) {
+        if (this.dead != true);
         this.name = name;
         hitPoint = maximumHP;
         this.attack = attack;
