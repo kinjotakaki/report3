@@ -15,7 +15,6 @@ package jp.ac.uryukyu.ie.e205703;
  * getDead();//敵の生死状態。true=死亡。
  */
 public class Hero extends LivingThing{
-    
     public Hero(String name,int hitpoint,int attack){
     super(name,hitpoint,attack);
 }
