@@ -13,6 +13,7 @@ class EnemyTest {
      *  (2) ヒーローが殴り、敵も殴る。敵は一撃で倒されていることを期待。
      *  (3) 敵が死んだ状態ならば攻撃できないはず。
      * 　　つまり攻撃実行してもヒーローのHPは減っていないことを期待。これを検証する。
+     * getHitPoint();敵のHPのsetterメソッド。
      */
     @Test
     void attackTest() {
@@ -21,6 +22,7 @@ class EnemyTest {
         Enemy slime = new Enemy("スライムもどき", 10, 100);
         demoHero.attack(slime);
         slime.attack(demoHero);
-        assertEquals(defaultHeroHp, demoHero.getHitPoint());
+        
+        assertEquals(defaultHeroHp, demoHero.hitPoint);
     }
 }
